@@ -11,10 +11,13 @@ class engage():
         self.dos()
 
     def dos(self):
-        target = raw_input("Enter the target host. ")
-        port = int(raw_input("Enter the port no. "))
-        conn = int(raw_input("Enter the numbers of connection you wanna make. "))
-        msg = "/* Hello World. */"
+        target = raw_input("Enter the target host : ")
+        port = int(raw_input("Enter the port [80]: "))
+        if not port: port = 80
+        conn = int(raw_input("Enter the numbers of connection [300] : "))
+        if not conn: conn = 300
+        msg = raw_input("Enter message to send ['Hello World'] : ")
+        if not msg : msg = "/* Hello World. */"
 
         try:
             webs = target.replace("http://", "")
